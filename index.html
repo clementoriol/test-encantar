@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Vite + TS</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="ar-viewport">
+      <div id="ar-hud" hidden>
+        <div id="dot" class="dot"></div>
+        <div id="status" class="status">Searching for target...</div>
+      </div>
+    </div>
+
+    <img id="dog" src="./references/dog.jpg" hidden />
+    <img id="cat" src="./references/cat.jpg" hidden />
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
