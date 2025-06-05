@@ -17,7 +17,7 @@ I'll need to get in touch with the library author about these
 
   ![QR Code to production url](./src/qrcode.jpg?raw=true "Title")
 
-  https://opencv-encantar-production.up.railway.app/
+  https://test-encantar-production.up.railway.app/
 
 - Allow the access to the camera (your browser should prompt you, if not check your browser settings)
 - Open up one of the reference images on a desktop computer
