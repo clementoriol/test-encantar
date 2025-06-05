@@ -103,7 +103,7 @@ async function startARSession() {
     trackers: [tracker],
     sources: [source],
     stats: true,
-    gizmos: true,
+    gizmos: false,
   });
 
   const scan = document.getElementById("scan");
