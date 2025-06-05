@@ -24,7 +24,7 @@
 export const TRAIN_MAX_KEYPOINTS = 1024; //512;
 
 /** Percentage relative to the screen size adjusted to the aspect ratio of the reference image */
-export const TRAIN_IMAGE_SCALE = 0.8; // ORB is not scale invariant
+export const TRAIN_IMAGE_SCALE = 0.6; // ORB is not scale invariant
 
 /** Width and height of the Normalized Image Space (NIS) */
 export const NIS_SIZE = 1024; // keypoint positions are stored as fixed point
