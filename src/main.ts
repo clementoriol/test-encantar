@@ -59,7 +59,7 @@ const updateStatus = (statusType: "found" | "searching", message?: string) => {
  */
 async function startARSession() {
   if (!AR.isSupported()) {
-    throw new Error(
+    alert(
       "This device is not compatible with this AR experience.\n\n" +
         "User agent: " +
         navigator.userAgent
