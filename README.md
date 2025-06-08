@@ -27,8 +27,9 @@ I'll need to get in touch with the library author about these
 
 ## Local Dev Setup
 
-### 1. Install Pnpm
+### 1. Install Pnpm v8
 
+⚠️ Make sure to install v8.x.x
 See [https://pnpm.io/installation](https://pnpm.io/installation)
 
 ### 2. Install depedencies
@@ -59,6 +60,12 @@ When starting, the local server should output the "Network" Url.
 - Visit this address from your mobile device
 - You'll see a message that the https cert is invalid. This is normal as we don't generate a cert in dev.
 - Click on Advanced -> Proceeed to https://192.168.x.x (unsafe) to ignore the error and proceed to the local server
+
+## Add new Images
+
+- Add images to the `scripts/references-source` folder
+- Run the `pnpm prepare-references` script. This will output them in ./public and prepare the references.json file
+- Reload your page
 
 ## TODO
 
