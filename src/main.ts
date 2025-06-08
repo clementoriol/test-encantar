@@ -14,6 +14,7 @@ import type {
   Tracker,
 } from "./encantar-js/trackers/tracker";
 import Speedy from "speedy-vision";
+import { loadReferences } from "./references/load";
 
 interface Trackable {
   readonly tracker: Tracker;
@@ -70,16 +71,9 @@ async function startARSession() {
   const tracker = AR.Tracker.Image({
     resolution: "sm",
   });
-  await tracker.database.add([
-    {
-      name: "dog",
-      image: document.getElementById("dog") as HTMLImageElement,
-    },
-    {
-      name: "cat",
-      image: document.getElementById("cat") as HTMLImageElement,
-    },
-  ]);
+
+  const references = await loadReferences();
+  await tracker.database.add(references);
 
   const viewport = AR.Viewport({
     style: "stretch",
@@ -211,7 +205,6 @@ function main() {
   startARSession()
     .then((session) => {
       const canvas = session.viewport.canvas; // render your virtual scene on this <canvas>
-      console.log(canvas);
 
       session.requestAnimationFrame(animate); // start the animation loop
     })

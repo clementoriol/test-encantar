@@ -20,47 +20,41 @@
  * A Frame holds information used to render a single animation frame of a Session
  */
 
-import { Session } from './session';
-import { TrackerResult } from '../trackers/tracker';
+import { Session } from "./session";
+import { TrackerResult } from "../trackers/tracker";
 
 /**
  * A Frame holds information used to render a single animation frame of a Session
  */
-export class Frame
-{
-    /** A reference to the session */
-    private readonly _session: Session;
+export class Frame<T extends TrackerResult = TrackerResult> {
+  /** A reference to the session */
+  private readonly _session: Session;
 
-    /** Results of all trackers (in the current frame) */
-    private readonly _results: TrackerResult[];
+  /** Results of all trackers (in the current frame) */
+  private readonly _results: T[];
 
+  /**
+   * Constructor
+   * @param session
+   * @param results
+   */
+  constructor(session: Session, results: T[]) {
+    this._session = session;
+    this._results = results;
+  }
 
+  /**
+   * The session of which this frame holds data
+   */
+  get session(): Session {
+    return this._session;
+  }
 
-    /**
-     * Constructor
-     * @param session
-     * @param results
-     */
-    constructor(session: Session, results: TrackerResult[])
-    {
-        this._session = session;
-        this._results = results;
-    }
-
-    /**
-     * The session of which this frame holds data
-     */
-    get session(): Session
-    {
-        return this._session;
-    }
-
-    /**
-     * The results of all trackers in this frame
-     */
-    get results(): Iterable<TrackerResult>
-    {
-        // we want to be able to iterate over the results of a frame multiple times
-        return this._results[Symbol.iterator]();
-    }
+  /**
+   * The results of all trackers in this frame
+   */
+  get results(): Iterable<T> {
+    // we want to be able to iterate over the results of a frame multiple times
+    return this._results[Symbol.iterator]();
+  }
 }
